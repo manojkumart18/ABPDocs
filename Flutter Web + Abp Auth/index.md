@@ -9,9 +9,9 @@ To run flutter web application in a specific port.
 flutter run -d chrome --web-port=4200
 ```
 
-## Configurations in ABP Framework:
+## Configurations in ABP Framework
 
-### **Step 1 :**
+### Step 1
    Open `appsettings.json` DbMigrator project. And In the `IdentityServer` Section. Please add the Scope.
 
    ```c#
@@ -22,7 +22,7 @@ flutter run -d chrome --web-port=4200
       }
    ```
 
-### **Step 2 :**
+### Step 2
 Open `IdentityServerDataSeedContributor` inside `Domain\IdentityServer`. Under `CreateClientsAsync` function. Paste the below configuration at the end of the function.
 
 ```c#
@@ -42,14 +42,14 @@ var appClientId = configurationSection["FlutterApp:ClientId"];
                 );
             }
 ```
-### **Step 3 :**
+### Step 3
 Now run the DbMigrator project. The above configuration will be updated in the database.
 
 Thats all from the ABP framework side.
 
-## Configurations in Flutter Web:
+## Configurations in Flutter Web
 
-### Step 1:
+### Step 1
 Inside the web folder create a static html file, In this case I name it as `static.html`.
 
 ![folder](./img/static.PNG )
@@ -74,7 +74,7 @@ Inside the web folder create a static html file, In this case I name it as `stat
 </html>
 ```
 
-### **Step 2:**
+### Step 2
 In your login file, Place a button, In the onclick trigger a function.
 
 ```dart
@@ -92,7 +92,7 @@ In your login file, Place a button, In the onclick trigger a function.
   }
 ```
 
-### **Step 3 :**
+### Step 3
 Install OAuth Dependency from pub. and import it in your login.dart file.
 
 [OAUTH2 Client Library](https://pub.dev/packages/oauth2)
@@ -103,7 +103,7 @@ import 'package:oauth2_client/oauth2_client.dart';
 import 'package:oauth2_client/oauth2_helper.dart';
 ```
 
-### **Step 4:**
+### Step 4
 Now paste the below code in the Login button's onclick function. And it should be an async function.
 
 ```dart
